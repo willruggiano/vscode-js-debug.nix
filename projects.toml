@@ -1,0 +1,17 @@
+# projects.toml file describing inputs for dream2nix
+#
+# If the local flake is unavailable, alternatively execute the app from the
+# upstream dream2nix flake:
+#   nix run github:nix-community/dream2nix#detect-projects $source
+
+[js-debug]
+name = "js-debug"
+relPath = ""
+subsystem = "nodejs"
+translator = "package-lock"
+translators = ["package-lock", "package-json"]
+builder = "strict-builder"
+
+[js-debug.subsystemInfo]
+noDev = true
+nodejs = 18
