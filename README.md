@@ -2,6 +2,8 @@
 
 [vs\*\*\*\*-js-debug][vscode-js-debug] distributed as a [Nix Flake].
 
+See [sources.json](./nix/sources.json) for available releases.
+
 ## TODO
 
 - [ ] Update sources for every tagged release

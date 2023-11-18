@@ -26,8 +26,8 @@
 
     packages.${system} = let
       sources = import ./nix/sources.nix {};
-    in
-      lib.mapAttrs (version: src:
+      mkName = lib.replaceStrings ["."] ["-"];
+      mkPackage = version: src:
         dream2nix.lib.evalModules {
           packageSets.nixpkgs = pkgs;
           modules = [
@@ -42,7 +42,12 @@
               paths.package = ./.;
             }
           ];
-        })
+        };
+    in
+      lib.mapAttrs' (
+        version: src:
+          lib.nameValuePair (mkName version) (mkPackage version src)
+      )
       sources;
   };
 }

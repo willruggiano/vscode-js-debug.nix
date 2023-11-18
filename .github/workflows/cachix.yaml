@@ -14,7 +14,7 @@ jobs:
           github_access_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: cachix/cachix-action@v12
         with:
-          name: willruggiano
+          name: vscode-js-debug
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
       - run: nix flake show --json | jq '.packages."x86_64-linux" | keys[]' | xargs -I {} nix build .#{} --accept-flake-config
-      - run: cachix pin vscode-js-debug ${{ github.ref_name }} "$(nix build .#latest --accept-flake-config --print-out-paths)"
+      - run: cachix pin vscode-js-debug latest "$(nix build .#latest --accept-flake-config --print-out-paths)"
