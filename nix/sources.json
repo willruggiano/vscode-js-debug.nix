@@ -1,0 +1,26 @@
+{
+    "latest": {
+        "branch": "main",
+        "description": "The VS Code JavaScript debugger",
+        "homepage": "",
+        "owner": "microsoft",
+        "repo": "vscode-js-debug",
+        "rev": "v1.84.0",
+        "sha256": "1mkjr4hvnx7sq7f0hg1j23j72mb9ng7nfrgmci8szn7p7135lfm8",
+        "type": "tarball",
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/v1.84.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    },
+    "v1.84.0": {
+        "branch": "main",
+        "description": "The VS Code JavaScript debugger",
+        "homepage": "",
+        "owner": "microsoft",
+        "repo": "vscode-js-debug",
+        "rev": "v1.84.0",
+        "sha256": "1mkjr4hvnx7sq7f0hg1j23j72mb9ng7nfrgmci8szn7p7135lfm8",
+        "type": "tarball",
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/v1.84.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+    }
+}
