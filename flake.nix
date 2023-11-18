@@ -3,6 +3,12 @@
     dream2nix.url = "github:nix-community/dream2nix";
     nixpkgs.follows = "dream2nix/nixpkgs";
   };
+
+  nixConfig = {
+    extra-substituters = ["https://vscode-js-debug.cachix.org"];
+    extra-trusted-public-keys = ["vscode-js-debug.cachix.org-1:R9DqPqQ4TZxvhStSu5v+6KcJ548NkUBXUVonqtkLl8g="];
+  };
+
   outputs = {
     dream2nix,
     nixpkgs,
