@@ -4,7 +4,7 @@ import semver
 import subprocess
 
 with open("nix/sources.json") as sources:
-    latest = semver.Version.parse(json.load(sources)['latest']['rev'].removeprefix("v"))
+    latest = semver.Version.parse(json.load(sources)["latest"]["rev"].removeprefix("v"))
 
 versions = []
 for line in fileinput.input(encoding="utf-8"):
@@ -13,7 +13,19 @@ for line in fileinput.input(encoding="utf-8"):
         versions.append(version)
 
 for version in versions:
-    subprocess.run(['niv', 'add', 'microsoft/vscode-js-debug', '-n', f"v{version}", '-r', f"v{version}"])
+    subprocess.run(
+        [
+            "niv",
+            "add",
+            "microsoft/vscode-js-debug",
+            "-n",
+            f"v{version}",
+            "-r",
+            f"v{version}",
+            "-t",
+            "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz",
+        ]
+    )
 
 if len(versions) > 0:
-    subprocess.run(['niv', 'update', 'latest', '-r', f"v{versions[-1]}"])
+    subprocess.run(["niv", "update", "latest", "-r", f"v{versions[-1]}"])

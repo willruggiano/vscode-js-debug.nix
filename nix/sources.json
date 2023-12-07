@@ -8,8 +8,8 @@
         "rev": "v1.85.0",
         "sha256": "0wc1hjr6y5yagpbn1dz47gqjmcqg0ba6as4d4b3yv2m8vbgcf5cq",
         "type": "tarball",
-        "url": "https://github.com/microsoft/vscode-js-debug/archive/v1.85.0.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.85.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
     },
     "v1.84.0": {
         "branch": "main",
@@ -20,8 +20,8 @@
         "rev": "v1.84.0",
         "sha256": "1mkjr4hvnx7sq7f0hg1j23j72mb9ng7nfrgmci8szn7p7135lfm8",
         "type": "tarball",
-        "url": "https://github.com/microsoft/vscode-js-debug/archive/v1.84.0.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.84.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
     },
     "v1.85.0": {
         "branch": "main",
@@ -32,7 +32,7 @@
         "rev": "v1.85.0",
         "sha256": "0wc1hjr6y5yagpbn1dz47gqjmcqg0ba6as4d4b3yv2m8vbgcf5cq",
         "type": "tarball",
-        "url": "https://github.com/microsoft/vscode-js-debug/archive/v1.85.0.tar.gz",
-        "url_template": "https://github.com/<owner>/<repo>/archive/<rev>.tar.gz"
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.85.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
     }
 }

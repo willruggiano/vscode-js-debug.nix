@@ -27,7 +27,7 @@
     };
 
     devShells.${system}.default = pkgs.mkShell {
-      buildInputs = with pkgs; [niv];
+      buildInputs = with pkgs; [niv ruff-lsp];
     };
 
     packages.${system} = let
