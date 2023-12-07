@@ -28,4 +28,4 @@ for version in versions:
     )
 
 if len(versions) > 0:
-    subprocess.run(["niv", "update", "latest", "-r", f"v{versions[-1]}"])
+    subprocess.run(["niv", "update", "latest", "-r", f"v{versions[0]}"])
