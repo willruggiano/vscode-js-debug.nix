@@ -1,6 +1,7 @@
 {
   inputs = {
     dream2nix.url = "github:nix-community/dream2nix";
+    flake-utils.url = "github:numtide/flake-utils";
     nixpkgs.follows = "dream2nix/nixpkgs";
   };
 
@@ -11,15 +12,20 @@
 
   outputs = {
     dream2nix,
+    flake-utils,
     nixpkgs,
     ...
   }: let
-    system = "x86_64-linux";
     inherit (nixpkgs) lib;
+    system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
     };
   in {
+    apps.${system}.update-sources = flake-utils.lib.mkApp {
+      drv = pkgs.callPackage ./scripts/update-sources {};
+    };
+
     devShells.${system}.default = pkgs.mkShell {
       buildInputs = with pkgs; [niv];
     };
