@@ -9,7 +9,7 @@ writeShellApplication {
   runtimeInputs = [
     gh
     niv
-    (python3.withPackages (ps: with ps; [semver]))
+    (python3.withPackages (pkgs: with pkgs; [semver]))
   ];
   text = ''
     gh api repos/microsoft/vscode-js-debug/releases --jq '.[].tag_name' | python ${./update-sources.py}

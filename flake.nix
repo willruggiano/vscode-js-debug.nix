@@ -27,7 +27,7 @@
     };
 
     devShells.${system}.default = pkgs.mkShell {
-      buildInputs = with pkgs; [niv ruff-lsp];
+      buildInputs = with pkgs; [niv pkgs.python3.pkgs.semver ruff-lsp];
     };
 
     packages.${system} = let
@@ -38,14 +38,17 @@
           packageSets.nixpkgs = pkgs;
           modules = [
             {
-              config.deps.src = src;
-              config.deps.version = version;
+              config.deps = {
+                inherit src version;
+              };
             }
             ./default.nix
             {
-              paths.projectRoot = ./.;
-              paths.projectRootFile = "flake.nix";
-              paths.package = ./.;
+              paths = {
+                projectRoot = ./.;
+                projectRootFile = "flake.nix";
+                package = ./.;
+              };
             }
           ];
         };
