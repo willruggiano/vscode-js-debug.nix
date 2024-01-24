@@ -30,6 +30,8 @@
       buildInputs = with pkgs; [niv pkgs.python3.pkgs.semver ruff-lsp];
     };
 
+    formatter.${system} = pkgs.alejandra;
+
     packages.${system} = let
       sources = import ./nix/sources.nix {};
       mkName = lib.replaceStrings ["."] ["-"];
