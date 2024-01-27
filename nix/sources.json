@@ -5,10 +5,10 @@
         "homepage": "",
         "owner": "microsoft",
         "repo": "vscode-js-debug",
-        "rev": "v1.86.0",
-        "sha256": "0vinibsllz5h09yk22qpldc40yki5jcc7cdw3sc5692f2fhy5nzy",
+        "rev": "v1.86.1",
+        "sha256": "0s8rnvilsqyaw5p38pcn96bw0dfjw44c69sb2r3fkv76c4maqh8j",
         "type": "tarball",
-        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.86.0.tar.gz",
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.86.1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
     },
     "v1.84.0": {
@@ -45,6 +45,18 @@
         "sha256": "0vinibsllz5h09yk22qpldc40yki5jcc7cdw3sc5692f2fhy5nzy",
         "type": "tarball",
         "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.86.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
+    },
+    "v1.86.1": {
+        "branch": "main",
+        "description": "The VS Code JavaScript debugger",
+        "homepage": "",
+        "owner": "microsoft",
+        "repo": "vscode-js-debug",
+        "rev": "v1.86.1",
+        "sha256": "0s8rnvilsqyaw5p38pcn96bw0dfjw44c69sb2r3fkv76c4maqh8j",
+        "type": "tarball",
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.86.1.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
     }
 }
