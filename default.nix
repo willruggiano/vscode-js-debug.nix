@@ -10,7 +10,7 @@
   ];
 
   mkDerivation = {
-    inherit (config.deps) src;
+    inherit (config.deps) patches src;
     buildPhase = ''
       gulp compile && gulp vsDebugServerBundle:webpack-bundle
     '';

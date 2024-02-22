@@ -34,14 +34,21 @@
 
     packages.${system} = let
       sources = import ./nix/sources.nix {};
+      patches = import ./patches;
       mkName = lib.replaceStrings ["."] ["-"];
-      mkPackage = version: src:
+      mkPackage = srcVersion: src:
         dream2nix.lib.evalModules {
           packageSets.nixpkgs = pkgs;
           modules = [
             {
-              config.deps = {
+              config.deps = let
+                version =
+                  if srcVersion == "latest"
+                  then src.rev
+                  else srcVersion;
+              in {
                 inherit src version;
+                patches = patches.${version} or [];
               };
             }
             ./default.nix

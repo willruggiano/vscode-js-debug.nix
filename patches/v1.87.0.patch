@@ -1,0 +1,21 @@
+From 9c640e131233208c91e1ef798f6f7de082580394 Mon Sep 17 00:00:00 2001
+From: Will Ruggiano <willruggiano@users.noreply.github.com>
+Date: Thu, 22 Feb 2024 15:27:52 -0700
+Subject: [PATCH] Remove postinstall script
+
+---
+ package.json | 1 -
+ 1 file changed, 1 deletion(-)
+
+diff --git a/package.json b/package.json
+index 1c8ecad5f..33c4ddbb0 100644
+--- a/package.json
++++ b/package.json
+@@ -38,7 +38,6 @@
+     "prepare": "husky install",
+     "package": "gulp package",
+     "publish": "gulp publish",
+-    "postinstall": "playwright install chromium",
+     "precommit": "npm-run-all --parallel test:lint test:types",
+     "updatetypes": "cd src/typings && npx -y @vscode/dts dev && npx -y @vscode/dts master",
+     "updatenodeapi": "python src/build/getNodePdl.py && prettier --write src/build/nodeCustom.ts",
