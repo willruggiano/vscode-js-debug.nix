@@ -4,7 +4,9 @@ import semver
 import subprocess
 
 with open("nix/sources.json") as sources:
-    latest = semver.Version.parse(json.load(sources)["latest"]["rev"].removeprefix("v"))
+    latest = sorted(
+        [semver.Version.parse(v.removeprefix("v")) for v in json.load(sources)]
+    )[-1]
 
 versions = []
 for line in fileinput.input(encoding="utf-8"):
@@ -26,6 +28,3 @@ for version in versions:
             "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz",
         ]
     )
-
-if len(versions) > 0:
-    subprocess.run(["niv", "update", "latest", "-r", f"v{versions[0]}"])

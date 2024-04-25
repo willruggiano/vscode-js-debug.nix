@@ -1,8 +1,8 @@
 {
-  "v1.87.0" = [
-    ./remove-postinstall-script.patch
-  ];
-  "v1.88.0" = [
-    ./remove-postinstall-script.patch
+  patches = [
+    {
+      patch = ./remove-postinstall-script.patch;
+      since = "1.87.0";
+    }
   ];
 }

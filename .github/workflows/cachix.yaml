@@ -27,4 +27,4 @@ jobs:
         with:
           name: vscode-js-debug
           authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
-      - run: cachix pin vscode-js-debug latest "$(nix build .#latest --accept-flake-config --print-out-paths)"
+      - run: cachix pin vscode-js-debug latest "$(nix build --accept-flake-config --print-out-paths)"

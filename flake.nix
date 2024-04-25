@@ -11,6 +11,7 @@
   };
 
   outputs = {
+    self,
     dream2nix,
     flake-utils,
     nixpkgs,
@@ -32,23 +33,26 @@
 
     formatter.${system} = pkgs.alejandra;
 
+    # TODO: We don't really need a "latest". We could just take the highest
+    # version after building all of the versioned derivations.
     packages.${system} = let
       sources = import ./nix/sources.nix {};
-      patches = import ./patches;
+      inherit (import ./patches) patches;
+
+      versionNewer = a: b: (builtins.compareVersions a b) >= 0;
+
       mkName = lib.replaceStrings ["."] ["-"];
-      mkPackage = srcVersion: src:
+      mkPackage = version: src: let
+        semver = lib.removePrefix "v" version;
+        patchesToApply = builtins.filter (p: versionNewer semver p.since) patches;
+      in
         dream2nix.lib.evalModules {
           packageSets.nixpkgs = pkgs;
           modules = [
             {
-              config.deps = let
-                version =
-                  if srcVersion == "latest"
-                  then src.rev
-                  else srcVersion;
-              in {
+              config.deps = {
                 inherit src version;
-                patches = patches.${version} or [];
+                patches = builtins.map (p: p.patch) patchesToApply;
               };
             }
             ./default.nix
@@ -61,11 +65,23 @@
             }
           ];
         };
+
+      packages =
+        lib.mapAttrs'
+        (version: src: lib.nameValuePair (mkName version) (mkPackage version src))
+        sources;
     in
-      lib.mapAttrs' (
-        version: src:
-          lib.nameValuePair (mkName version) (mkPackage version src)
-      )
-      sources;
+      {
+        default = self.packages.${system}.latest;
+        latest =
+          lib.foldl'
+          (a: b:
+            if (versionNewer (a.version or "") (b.version or ""))
+            then a
+            else b)
+          {}
+          (lib.attrValues packages);
+      }
+      // packages;
   };
 }
