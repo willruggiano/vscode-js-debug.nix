@@ -154,5 +154,17 @@
         "type": "tarball",
         "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.95.0.tar.gz",
         "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
+    },
+    "v1.95.1": {
+        "branch": "main",
+        "description": "A DAP-compatible JavaScript debugger. Used in VS Code, VS, + more",
+        "homepage": "",
+        "owner": "microsoft",
+        "repo": "vscode-js-debug",
+        "rev": "v1.95.1",
+        "sha256": "0plxyp4vm15fy68nvrndkhvc4jz9ar6jqhv9ask5dpyqmc2mq337",
+        "type": "tarball",
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.95.1.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
     }
 }
