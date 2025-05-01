@@ -1,4 +1,16 @@
 {
+    "v1.100.0": {
+        "branch": "main",
+        "description": "A DAP-compatible JavaScript debugger. Used in VS Code, VS, + more",
+        "homepage": "",
+        "owner": "microsoft",
+        "repo": "vscode-js-debug",
+        "rev": "v1.100.0",
+        "sha256": "007zbn50mfw8dirdzabzg18fvfbvfnbq35px8qfx48wkagi7jwyb",
+        "type": "tarball",
+        "url": "https://github.com/microsoft/vscode-js-debug/archive/refs/tags/v1.100.0.tar.gz",
+        "url_template": "https://github.com/<owner>/<repo>/archive/refs/tags/<rev>.tar.gz"
+    },
     "v1.84.0": {
         "branch": "main",
         "description": "The VS Code JavaScript debugger",
