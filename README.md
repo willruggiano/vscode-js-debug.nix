@@ -1,5 +1,9 @@
 # vs\*\*\*\*-js-debug.nix
 
+> [!WARNING]
+> This is now available in nixpkgs!
+> https://search.nixos.org/packages?query=vscode-js-debug
+
 [vs\*\*\*\*-js-debug][vscode-js-debug] distributed as a [Nix Flake].
 
 Run `nix flake show github:willruggiano/vscode-js-debug.nix`
